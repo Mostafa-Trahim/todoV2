@@ -17,14 +17,16 @@ describe('GET Tasks', () => {
 
 
 describe('POST Task', () => {
+    const email = 'post@foo.com';
+    const password = 'post123';
     it("should create a new task", async () => {
-        await insertTestUser('post@foo.com', 'post123');
-        const token = await getToken('post@foo.com');
+        await insertTestUser(email, password);
+        const token = await getToken(email);
         const response = await fetch(baseUrl + '/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': token // No 'Bearer' prefix for simplicity
+                'Authorization': token
             },
             body: JSON.stringify({ description: 'New Task' })
         });
@@ -36,12 +38,12 @@ describe('POST Task', () => {
     });
 
     it("should not create a new task without description", async () => {
-        const token = await getToken('post@foo.com');
+        const token = await getToken(email);
         const response = await fetch(baseUrl + '/create', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': token // No 'Bearer' prefix for simplicity
+                'Authorization': token 
             },
             body: JSON.stringify({ description: null })
         });
