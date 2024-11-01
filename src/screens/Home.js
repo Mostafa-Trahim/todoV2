@@ -27,7 +27,7 @@ function Home() {
 
   const addTask = () => {
     // const headers = { headers: { Authorization: user.token } };
-    const headers = { headers: { Authorization: `Bearer ${user.token}` } };
+    const headers = { headers: { Authorization: user.token } };
       axios.post(url + '/create', {description: task}, headers)
       .then(response => {
         setTasks([...tasks, {id: response.data.id, description: task}]);
