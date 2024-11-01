@@ -14,6 +14,21 @@ export default function Authentication({authenticationMode}) {
     const { user, setUser, signUp, signIn } = UseUser();
     const navigate = useNavigate();
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     try {
+    //         if (authenticationMode === AuthenticationMode.Register) {
+    //             await signUp();
+    //             navigate('/signin');
+    //         } else {
+    //             await signIn();
+    //             navigate('/');
+    //         }
+    //     } catch(error) {
+    //         const message = error.response && error.response.data ? error.response.data.error : error;
+    //         alert(message);
+    //     }
+    // }
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -22,18 +37,22 @@ export default function Authentication({authenticationMode}) {
                 navigate('/signin');
             } else {
                 await signIn();
-                navigate('/');
+                navigate('/'); // Redirect only if signIn is successful
             }
         } catch(error) {
-            const message = error.response && error.response.data ? error.response.data.error : error;
-            alert(message);
+            console.error("Error details:", error); // Log full error for debugging
+        const message = error.response && error.response.data && error.response.data.message 
+                        ? error.response.data.message 
+                        : error.message || "An error occurred";
+        alert(message);
         }
-    }
+    };
+    
 
   return (
     <div>
         <h3>{ authenticationMode === AuthenticationMode.Login ? 'Sign In' : 'Sign Up'}</h3>
-        <form>
+        <form onSubmit={handleSubmit}>
             <div>
                 <label>Email</label>
                 <input 
