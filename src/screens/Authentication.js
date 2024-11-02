@@ -14,21 +14,6 @@ export default function Authentication({authenticationMode}) {
     const { user, setUser, signUp, signIn } = UseUser();
     const navigate = useNavigate();
 
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-    //     try {
-    //         if (authenticationMode === AuthenticationMode.Register) {
-    //             await signUp();
-    //             navigate('/signin');
-    //         } else {
-    //             await signIn();
-    //             navigate('/');
-    //         }
-    //     } catch(error) {
-    //         const message = error.response && error.response.data ? error.response.data.error : error;
-    //         alert(message);
-    //     }
-    // }
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
