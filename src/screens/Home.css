@@ -4,7 +4,7 @@
     /* display: flex; */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
 }
 
 li {
@@ -14,4 +14,18 @@ li {
 
 .delete-btn {
   margin-left: 16px;
+}
+
+.tasks {
+  list-style-type: none;
+  padding: 0;
+  margin: 16px 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
 }

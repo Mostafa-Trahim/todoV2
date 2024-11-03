@@ -1,0 +1,40 @@
+/* Row.css */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    background-color: #222;
+    border-radius: 5px;
+    color: #D9D7EA;
+    margin-bottom: 1em;
+    max-width: 400px; 
+    min-width: 400px; 
+    width: 100%;      
+    word-wrap: break-word; 
+}
+
+.todo-text {
+    flex-grow: 1; /* Ensures the text takes up remaining space */
+    margin-right: 0.5em; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+}
+
+.delete-btn {
+    background-color: #4A40BF;
+    color: #16161D;
+    border: none;
+    padding: 0.3em 0.7em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #c82d1c;
+}
+
+.delete-btn :where(svg, img) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }

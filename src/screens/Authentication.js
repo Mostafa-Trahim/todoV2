@@ -35,9 +35,9 @@ export default function Authentication({authenticationMode}) {
     
 
   return (
-    <div>
+    <div className="auth-container">
         <h3>{ authenticationMode === AuthenticationMode.Login ? 'Sign In' : 'Sign Up'}</h3>
-        <form onSubmit={handleSubmit}>
+        <form className="auth-form" onSubmit={handleSubmit}>
             <div>
                 <label>Email</label>
                 <input 
@@ -57,9 +57,9 @@ export default function Authentication({authenticationMode}) {
                 />
             </div>
             <div>
-                <button>{authenticationMode === AuthenticationMode.Login ? 'Login' : 'Submit'}</button>
+                <button className='btn'>{authenticationMode === AuthenticationMode.Login ? 'Login' : 'Submit'}</button>
             </div>
-            <div>
+            <div className='Link-txt'>
                 <Link to={authenticationMode === AuthenticationMode.Login ? '../signup' : '../signin'}>
                     {authenticationMode === AuthenticationMode.Login ? 'No account? Sign Up' : 'Already Signed Up? Sign In'}
                 </Link>

@@ -1,13 +1,73 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: grid;
+  justify-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #16161D;
+  color: #D9D7EA;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+label {
+  font: inherit;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.container {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  max-width: fit-content;
+  display: flex;
+  place-items: center;
+  gap: 0.5em;
+  background-color: #4A40BF;
+  color: #16161D;
+  text-decoration: none;
+  padding: 0.5em;
+  border-radius: 10px;
+  box-shadow: 0.05em 0.1em 0.9em #1c193d;
+}
+
+.btn :where(svg, img) {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.btn:where(:active, :hover) {
+  background-color: #3a30a6;
+}
+
+.input {
+  border: none;
+  border-radius: 5px;
+  padding: 0.65em 0.75em;
+  width: 100%;
+  background-color: #09080C;
+  color: #D9D7EA;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 0.2em hsl(245, 15%, 10%), 0 0 0 0.4em hsl(245, 50%, 50% / 0.8);
+}
+
+.input::placeholder {
+  opacity: 0.6;
+  color: #888;
 }
